@@ -1,0 +1,11 @@
+---
+import { profile } from '~/data/profile';
+import EducationItem from '~/components/EducationItem.astro';
+---
+
+<section class="reveal py-10" id="education">
+  <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Education</h2>
+  <div class="divide-y divide-hairline">
+    {profile.education.map((entry) => <EducationItem entry={entry} />)}
+  </div>
+</section>

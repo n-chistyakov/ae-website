@@ -1,9 +1,27 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/Header.astro';
+import Contact from '~/components/Contact.astro';
+import Intro from '~/components/Intro.astro';
+import About from '~/components/About.astro';
+import Experience from '~/components/Experience.astro';
+import Education from '~/components/Education.astro';
+import Skills from '~/components/Skills.astro';
+import Projects from '~/components/Projects.astro';
+import Footer from '~/components/Footer.astro';
+import { showStickyHeader } from '~/data/profile';
 ---
 
 <Layout>
-  <main class="mx-auto max-w-[640px] px-6 py-10">
-    <p>Scaffold boots. Content coming next.</p>
+  {showStickyHeader && <Header />}
+  <main class="mx-auto max-w-[640px] px-6 py-10 tablet:py-16 desktop:max-w-[720px] desktop:py-24">
+    <Contact />
+    <Intro />
+    <About />
+    <Experience />
+    <Education />
+    <Skills />
+    <Projects />
+    <Footer />
   </main>
 </Layout>

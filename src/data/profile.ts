@@ -1,9 +1,9 @@
 import type { ImageMetadata } from 'astro';
 
 export interface ContactLink {
-  label: string;
+  kind: string;
+  value: string;
   href: string;
-  icon: 'email' | 'linkedin' | 'github';
 }
 
 export interface ExperienceBullet {
@@ -68,9 +68,9 @@ export const profile: Profile = {
     'Senior Analytics Engineer with 5+ years architecting dbt-based data platforms on GCP/AWS. Partners directly with finance, product, commercial and marketing leadership to turn raw data into trusted, self-serve products.',
 
   contact: [
-    { label: 'chistyakov97@gmail.com', href: 'mailto:chistyakov97@gmail.com', icon: 'email' },
-    { label: 'linkedin.com/nikitachistyakov', href: 'https://linkedin.com/in/nikitachistyakov', icon: 'linkedin' },
-    { label: 'github.com/n-chistyakov', href: 'https://github.com/n-chistyakov', icon: 'github' },
+    { kind: 'Email', value: 'chistyakov97@gmail.com', href: 'mailto:chistyakov97@gmail.com' },
+    { kind: 'LinkedIn', value: 'linkedin.com/nikitachistyakov', href: 'https://linkedin.com/in/nikitachistyakov' },
+    { kind: 'GitHub', value: 'github.com/n-chistyakov', href: 'https://github.com/n-chistyakov' },
   ],
 
   experience: [

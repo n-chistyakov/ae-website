@@ -1,0 +1,8 @@
+---
+import { profile } from '~/data/profile';
+---
+
+<footer class="reveal py-10 text-xs text-muted">
+  {profile.interests && <p class="mb-2">{profile.interests.join(' · ')}</p>}
+  <p>© {new Date().getFullYear()} {profile.name}</p>
+</footer>

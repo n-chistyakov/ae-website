@@ -1,0 +1,31 @@
+---
+import { profile } from '~/data/profile';
+import Icon from '~/components/Icon.astro';
+---
+
+<section class="reveal py-10" id="skills">
+  <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Skills / Stack</h2>
+
+  <div class="mt-4 flex flex-wrap gap-2">
+    {
+      profile.skills.map((skill) => (
+        <span class="rounded-full border border-hairline bg-surface px-3 py-1 text-sm">{skill}</span>
+      ))
+    }
+  </div>
+
+  <div class="my-6 border-t border-hairline"></div>
+
+  <div class="flex flex-wrap gap-3">
+    {
+      profile.tools.map((tool) => (
+        <span
+          class="flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-hairline transition-shadow hover:ring-accent"
+          title={tool.label}
+        >
+          <Icon name={tool.icon} class="h-5 w-5" />
+        </span>
+      ))
+    }
+  </div>
+</section>

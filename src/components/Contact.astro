@@ -1,0 +1,18 @@
+---
+import { profile } from '~/data/profile';
+---
+
+<section class="reveal" id="contact">
+  <div class="divide-y divide-hairline border-y border-hairline">
+    {
+      profile.contact.map((c) => (
+        <div class="flex items-center justify-between py-3">
+          <span class="font-mono text-xs uppercase tracking-wide text-muted">{c.kind}</span>
+          <a href={c.href} class="text-sm text-ink hover:text-accent transition-colors">
+            {c.value}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>

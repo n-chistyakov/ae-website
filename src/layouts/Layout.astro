@@ -1,12 +1,14 @@
 ---
 import '~/styles/global.css';
+import { Font } from 'astro:assets';
+import { profile } from '~/data/profile';
 
 export interface Props {
   title?: string;
   description?: string;
 }
 
-const { title = 'Nikita Chistyakov', description = 'Personal portfolio.' } = Astro.props;
+const { title = `${profile.name} — ${profile.role}`, description = profile.about.split('. ')[0] + '.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,9 +18,28 @@ const { title = 'Nikita Chistyakov', description = 'Personal portfolio.' } = Ast
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.site} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-mono" preload />
   </head>
   <body class="bg-bg text-ink antialiased font-sans">
     <slot />
+    <script>
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          }),
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
   </body>
 </html>

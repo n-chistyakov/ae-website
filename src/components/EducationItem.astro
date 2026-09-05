@@ -1,0 +1,17 @@
+---
+import type { EducationEntry } from '~/data/profile';
+
+export interface Props {
+  entry: EducationEntry;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="py-4">
+  <h3 class="font-semibold">{entry.degree}</h3>
+  <p class="font-mono text-xs uppercase tracking-wide text-muted">
+    {entry.institution} · {entry.year}
+  </p>
+  {entry.description && <p class="mt-2 text-sm leading-relaxed">{entry.description}</p>}
+</article>

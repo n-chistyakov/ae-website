@@ -1,0 +1,11 @@
+---
+import { profile } from '~/data/profile';
+import ExperienceItem from '~/components/ExperienceItem.astro';
+---
+
+<section class="reveal py-10" id="experience">
+  <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Experience</h2>
+  <div class="divide-y divide-hairline">
+    {profile.experience.map((entry) => <ExperienceItem entry={entry} />)}
+  </div>
+</section>
