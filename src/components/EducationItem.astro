@@ -13,5 +13,11 @@ const { entry } = Astro.props;
   <p class="font-mono text-xs uppercase tracking-wide text-muted">
     {entry.institution} · {entry.year}
   </p>
-  {entry.courses && <p class="mt-2 text-sm leading-relaxed text-muted">{entry.courses.join(', ')}</p>}
+  {
+    entry.courses && (
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted">
+        {entry.courses.map((course) => <li>{course}</li>)}
+      </ul>
+    )
+  }
 </article>
