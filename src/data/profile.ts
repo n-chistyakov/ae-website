@@ -1,5 +1,9 @@
 import type { ImageMetadata } from 'astro';
 import profileImage from '~/assets/photo/profile.jpeg';
+import igLogo from '~/assets/logos/ig.png';
+import bppLogo from '~/assets/logos/bpp.png';
+import precisLogo from '~/assets/logos/precis-digital.jpg';
+import hiitTheBeatLogo from '~/assets/logos/hiit-the-beat.png';
 
 export interface ContactLink {
   kind: string;
@@ -88,6 +92,7 @@ export const profile: Profile = {
   experience: [
     {
       company: 'IG Group',
+      logo: igLogo,
       badgeColor: '#E4002B',
       role: 'Analytics Engineer',
       location: 'London, UK',
@@ -118,6 +123,7 @@ export const profile: Profile = {
     },
     {
       company: 'BPP',
+      logo: bppLogo,
       badgeColor: '#0F172A',
       role: 'Product Analyst',
       location: 'London, UK',
@@ -148,6 +154,7 @@ export const profile: Profile = {
     },
     {
       company: 'Precis Digital',
+      logo: precisLogo,
       badgeColor: '#7C3AED',
       role: 'Digital Analyst',
       location: 'London, UK',
@@ -170,6 +177,7 @@ export const profile: Profile = {
     },
     {
       company: 'HIIT the Beat by Breakletics',
+      logo: hiitTheBeatLogo,
       badgeColor: '#F59E0B',
       role: 'Data Analyst',
       location: 'Remote',
