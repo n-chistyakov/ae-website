@@ -40,12 +40,6 @@ export interface ToolIcon {
   icon: string;
 }
 
-export interface ProjectEntry {
-  title: string;
-  href: string;
-  description: string;
-}
-
 export interface CertificationEntry {
   name: string;
   issuer: string;
@@ -67,7 +61,6 @@ export interface Profile {
   education: EducationEntry[];
   skills: string[];
   tools: ToolIcon[];
-  projects: ProjectEntry[];
   certifications: CertificationEntry[];
   interests?: string;
 }
@@ -235,23 +228,6 @@ export const profile: Profile = {
     { label: 'Terraform', icon: 'terraform' },
     { label: 'Looker', icon: 'looker' },
     { label: 'Power BI', icon: 'powerbi' },
-  ],
-
-  projects: [
-    {
-      title: 'F1 ETL Pipeline',
-      // TODO: confirm actual repo URL.
-      href: 'https://github.com/n-chistyakov/REPLACE',
-      description:
-        'Python-based ETL pipeline ingesting Formula 1 data from public APIs, modelled for relational storage in PostgreSQL on AWS RDS. Automated daily refresh via AWS Lambda, with Looker Studio dashboards for race insights.',
-    },
-    {
-      title: 'NYC Schools Analysis',
-      // TODO: confirm actual repo URL.
-      href: 'https://github.com/n-chistyakov/REPLACE',
-      description:
-        'Cleaned and transformed NYC SAT datasets in pandas, analysing school-level and borough-level performance patterns.',
-    },
   ],
 
   certifications: [
