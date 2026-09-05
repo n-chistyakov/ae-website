@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import profileImage from '~/assets/photo/profile.jpeg';
 
 export interface ContactLink {
   kind: string;
@@ -64,6 +65,7 @@ export const profile: Profile = {
   name: 'Nikita Chistyakov',
   role: 'Senior Analytics Engineer',
   location: 'London, UK',
+  photo: profileImage,
   about:
     'Senior Analytics Engineer with 5+ years architecting dbt-based data platforms on GCP/AWS. Partners directly with finance, product, commercial and marketing leadership to turn raw data into trusted, self-serve products.',
 

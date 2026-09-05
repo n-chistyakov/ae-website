@@ -8,8 +8,10 @@ import { profile } from '~/data/profile';
     profile.photo ? (
       <Image
         src={profile.photo}
-        width={160}
-        height={160}
+        width={320}
+        height={320}
+        fit="cover"
+        position="center"
         alt={profile.name}
         class="h-40 w-40 rounded-2xl object-cover ring-1 ring-hairline"
       />
