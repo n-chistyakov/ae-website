@@ -14,13 +14,14 @@ import Icon from '~/components/Icon.astro';
     }
   </div>
 
-  <div class="my-6 border-t border-hairline"></div>
-
-  <div class="flex flex-wrap items-center gap-5">
+  <div class="mt-6 flex flex-wrap items-center gap-5">
     {
       profile.tools.map((tool) => (
-        <span title={tool.label}>
-          <Icon name={tool.icon} class="h-9 w-9 transition-transform duration-200 ease-out hover:scale-125" />
+        <span class="group relative inline-flex">
+          <Icon name={tool.icon} class="h-9 w-9 transition-transform duration-200 ease-out group-hover:scale-125" />
+          <span class="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+            {tool.label}
+          </span>
         </span>
       ))
     }
