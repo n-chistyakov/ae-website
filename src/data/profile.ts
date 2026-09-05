@@ -72,13 +72,13 @@ export interface Profile {
   interests?: string;
 }
 
-// Sticky top bar (location + live clock) is off by default per the brief — flip to enable.
-export const showStickyHeader = false;
+// Sticky top bar: location + live local time.
+export const showStickyHeader = true;
 
 export const profile: Profile = {
   name: 'Nikita Chistyakov',
   role: 'Senior Analytics Engineer',
-  location: 'London, UK',
+  location: 'London, United Kingdom',
   photo: profileImage,
   about:
     'Senior Analytics Engineer with 5+ years architecting dbt-based data platforms on GCP/AWS. Partners directly with finance, product, commercial and marketing leadership to turn raw data into trusted, self-serve products.',

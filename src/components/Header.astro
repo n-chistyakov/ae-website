@@ -3,7 +3,26 @@ import { profile } from '~/data/profile';
 ---
 
 <header class="sticky top-0 z-10 border-b border-hairline bg-bg/90 backdrop-blur">
-  <div class="mx-auto max-w-[640px] px-6 py-3 desktop:max-w-[720px]">
+  <div class="mx-auto flex max-w-[640px] items-center justify-between px-6 py-3 desktop:max-w-[720px]">
     <p class="font-mono text-xs uppercase tracking-widest text-muted">{profile.location}</p>
+    <p class="font-mono text-xs uppercase tracking-widest text-muted" data-clock></p>
   </div>
 </header>
+
+<script>
+  const clockEl = document.querySelector('[data-clock]');
+  const formatter = new Intl.DateTimeFormat('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZone: 'Europe/London',
+    timeZoneName: 'shortOffset',
+  });
+
+  function tick() {
+    if (clockEl) clockEl.textContent = formatter.format(new Date());
+  }
+
+  tick();
+  setInterval(tick, 30_000);
+</script>
