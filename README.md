@@ -13,8 +13,6 @@ npm run dev
 
 Site runs at `http://localhost:4321`.
 
-## Build
-
 ```bash
 npm run build
 npm run preview
