@@ -13,5 +13,5 @@ const { entry } = Astro.props;
   <p class="font-mono text-xs uppercase tracking-wide text-muted">
     {entry.institution} · {entry.year}
   </p>
-  {entry.description && <p class="mt-2 text-sm leading-relaxed">{entry.description}</p>}
+  {entry.courses && <p class="mt-2 text-sm leading-relaxed text-muted">{entry.courses.join(', ')}</p>}
 </article>

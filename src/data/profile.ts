@@ -28,8 +28,7 @@ export interface EducationEntry {
   degree: string;
   institution: string;
   year: string;
-  /** No per-degree description was supplied in the brief — omitted rather than fabricated. */
-  description?: string;
+  courses?: string[];
 }
 
 export interface ToolIcon {
@@ -41,6 +40,16 @@ export interface ProjectEntry {
   title: string;
   href: string;
   description: string;
+}
+
+export interface CertificationEntry {
+  name: string;
+  issuer: string;
+  issued: string;
+  expires?: string;
+  expired?: boolean;
+  credentialId?: string;
+  skills?: string[];
 }
 
 export interface Profile {
@@ -55,7 +64,8 @@ export interface Profile {
   skills: string[];
   tools: ToolIcon[];
   projects: ProjectEntry[];
-  interests?: string[];
+  certifications: CertificationEntry[];
+  interests?: string;
 }
 
 // Sticky top bar (location + live clock) is off by default per the brief — flip to enable.
@@ -183,9 +193,24 @@ export const profile: Profile = {
   ],
 
   education: [
-    { degree: 'MSc Digital Marketing Science', institution: 'Royal Holloway University', year: '2021–2022' },
-    { degree: 'MA Global Management', institution: 'University of Applied Sciences Hof', year: '2019–2021' },
-    { degree: 'BSc Economics', institution: 'Plekhanov Russian University', year: '2015–2019' },
+    {
+      degree: 'MSc Digital Marketing Science',
+      institution: 'Royal Holloway University',
+      year: '2021–2022',
+      courses: ['Marketing Analytics', 'Consumer Data & Behaviour', 'Digital Strategy', 'Web & Social Analytics'],
+    },
+    {
+      degree: 'MA Global Management',
+      institution: 'University of Applied Sciences Hof',
+      year: '2019–2021',
+      courses: ['Business Analytics', 'Data-Driven Decision Making', 'Strategic Management', 'International Finance'],
+    },
+    {
+      degree: 'BSc Economics',
+      institution: 'Plekhanov Russian University',
+      year: '2015–2019',
+      courses: ['Statistics', 'Mathematics', 'Econometrics', 'Theory of Probability'],
+    },
   ],
 
   skills: ['SQL', 'Python', 'dbt', 'GCP', 'AWS', 'BigQuery', 'Snowflake', 'Airflow', 'Terraform', 'Looker', 'Power BI'],
@@ -221,10 +246,51 @@ export const profile: Profile = {
     },
   ],
 
-  interests: [
-    'Motorbikes — rides a Royal Enfield 650',
-    'Tennis',
-    'Cooking (salmon & rice is the reliable one, tomato salad is the specialty)',
-    'Dachshund co-pilot on bike trips',
+  certifications: [
+    {
+      name: 'AWS Certified Solutions Architect – Associate',
+      issuer: 'Amazon Web Services (AWS)',
+      issued: 'Feb 2026',
+      expires: 'Feb 2029',
+      skills: ['Amazon Web Services (AWS)'],
+    },
+    {
+      name: 'Git Essential Training',
+      issuer: 'LinkedIn',
+      issued: 'Jan 2025',
+      skills: ['Git'],
+    },
+    {
+      name: 'dbt Fundamentals',
+      issuer: 'dbt Labs',
+      issued: 'Aug 2025',
+      skills: ['dbt'],
+    },
+    {
+      name: 'Intermediate Python',
+      issuer: 'DataCamp',
+      issued: 'Jun 2024',
+      skills: ['Python (Programming Language)'],
+    },
+    {
+      name: 'Alteryx Designer Core Certification',
+      issuer: 'Alteryx',
+      issued: 'Nov 2023',
+      expires: 'Nov 2025',
+      expired: true,
+      skills: ['Alteryx'],
+    },
+    {
+      name: 'Google Analytics Individual Qualification',
+      issuer: 'Google',
+      issued: 'Mar 2022',
+      expires: 'Mar 2023',
+      expired: true,
+      credentialId: '109662730',
+      skills: ['Google Analytics'],
+    },
   ],
+
+  interests:
+    'Outside of work, I ride a classic Royal Enfield 650 motorbike and play tennis. I’m a happy owner of dachshund - keeps me company on bike trips. Lastly, I like to think I can cook - I’ve perfected salmon and rice over time, though my real specialty is tomato salad.',
 };

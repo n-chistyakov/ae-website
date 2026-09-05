@@ -1,0 +1,19 @@
+---
+import type { CertificationEntry } from '~/data/profile';
+
+export interface Props {
+  entry: CertificationEntry;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="py-4">
+  <h3 class="font-semibold">{entry.name}</h3>
+  <p class="font-mono text-xs uppercase tracking-wide text-muted">
+    {entry.issuer} · Issued {entry.issued}
+    {entry.expires && ` · ${entry.expired ? 'Expired' : 'Expires'} ${entry.expires}`}
+  </p>
+  {entry.credentialId && <p class="mt-1 text-xs text-muted">Credential ID {entry.credentialId}</p>}
+  {entry.skills && <p class="mt-2 text-sm text-muted">{entry.skills.join(', ')}</p>}
+</article>

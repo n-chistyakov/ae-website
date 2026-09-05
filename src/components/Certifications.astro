@@ -1,0 +1,11 @@
+---
+import { profile } from '~/data/profile';
+import CertificationItem from '~/components/CertificationItem.astro';
+---
+
+<section class="reveal py-10" id="certifications">
+  <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Certifications</h2>
+  <div class="divide-y divide-hairline">
+    {profile.certifications.map((entry) => <CertificationItem entry={entry} />)}
+  </div>
+</section>

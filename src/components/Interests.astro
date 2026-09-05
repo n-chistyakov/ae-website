@@ -1,0 +1,12 @@
+---
+import { profile } from '~/data/profile';
+---
+
+{
+  profile.interests && (
+    <section class="reveal py-10" id="interests">
+      <h2 class="font-mono text-xs uppercase tracking-widest text-muted">Interests &amp; Hobbies</h2>
+      <p class="mt-3 max-w-[640px] text-base leading-relaxed">{profile.interests}</p>
+    </section>
+  )
+}
