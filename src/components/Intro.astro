@@ -3,21 +3,21 @@ import { Image } from 'astro:assets';
 import { profile } from '~/data/profile';
 ---
 
-<section class="reveal py-10" id="intro">
+<section class="reveal flex flex-col items-center py-10 text-center" id="intro">
   {
     profile.photo ? (
       <Image
         src={profile.photo}
-        width={320}
-        height={320}
+        width={480}
+        height={480}
         fit="cover"
         position="center"
         alt={profile.name}
-        class="h-40 w-40 rounded-2xl object-cover ring-1 ring-hairline"
+        class="h-60 w-60 rounded-2xl object-cover ring-1 ring-hairline"
       />
     ) : (
-      <div class="flex h-40 w-40 items-center justify-center rounded-2xl bg-surface ring-1 ring-hairline">
-        <svg viewBox="0 0 24 24" class="h-16 w-16 text-muted" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <div class="flex h-60 w-60 items-center justify-center rounded-2xl bg-surface ring-1 ring-hairline">
+        <svg viewBox="0 0 24 24" class="h-24 w-24 text-muted" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.42 0-9 2.24-9 5v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2c0-2.76-4.58-5-9-5Z" />
         </svg>
       </div>
