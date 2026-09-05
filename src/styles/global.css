@@ -16,6 +16,18 @@
   --breakpoint-desktop: 1200px;
 }
 
+.reveal {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 4%, transparent);
+  border-radius: 1rem;
+  padding-inline: 1.5rem;
+}
+
+.reveal.no-border {
+  border: none;
+  border-radius: 0;
+  padding-inline: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
