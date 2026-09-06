@@ -198,13 +198,13 @@ export const profile: Profile = {
       degree: 'MSc Digital Marketing Science',
       institution: 'Royal Holloway University',
       year: '2021–2022',
-      courses: ['Marketing Analytics', 'Consumer Data & Behaviour', 'Digital Strategy', 'Web & Social Analytics'],
+      courses: ['Marketing Analytics', 'Consumer Data', 'Digital Strategy', 'Web Analytics'],
     },
     {
       degree: 'MA Global Management',
       institution: 'University of Applied Sciences Hof',
       year: '2019–2021',
-      courses: ['Business Analytics', 'Data-Driven Decision Making', 'Strategic Management', 'International Finance'],
+      courses: ['Business Analytics', 'Strategic Management', 'International Finance'],
     },
     {
       degree: 'BSc Economics',
