@@ -90,7 +90,7 @@ export const profile: Profile = {
       role: 'Analytics Engineer',
       location: 'London, UK',
       dateStart: '2025',
-      dateEnd: 'Present',
+      dateEnd: '2026',
       bullets: [
         {
           lead: 'Architected Gold layer data model and established dbt best practices',
