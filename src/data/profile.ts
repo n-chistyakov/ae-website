@@ -77,7 +77,7 @@ export const profile: Profile = {
     'Senior Analytics Engineer with 5+ years architecting dbt-based data platforms on GCP/AWS. Partners directly with finance, product, commercial and marketing leadership to turn raw data into trusted, self-serve products.',
 
   contact: [
-    { kind: 'Email', value: 'chistyakov97@gmail.com', href: 'mailto:chistyakov97@gmail.com' },
+    { kind: 'Email', value: 'chistyakov.inbox@gmail.com', href: 'mailto:chistyakov.inbox@gmail.com' },
     { kind: 'LinkedIn', value: 'linkedin.com/nikitachistyakov', href: 'https://linkedin.com/in/nikitachistyakov' },
     { kind: 'GitHub', value: 'github.com/n-chistyakov', href: 'https://github.com/n-chistyakov' },
   ],
